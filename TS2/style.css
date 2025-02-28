@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 250px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 75vh;
+    margin: auto;
+    padding-left: 60px;
+    border: solid 10px black;
+    filter: drop-shadow(0 0 10px black);
+    
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.day-button {
+    width: 120px;
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s;
+    outline: 1px solid black;
+}
+
+.day-button:hover {
+    transform: scale(1.1);
+}
+
+#monday { background: #b31010;}
+#tuesday { background: #e07b1c;}
+#wednesday { background: #b6aa00;}
+#thursday { background: #125216;}
+#friday { background: #1b18df;}
+#saturday { background: #410c88;}
+#sunday { background: #9b15e9; }
+
+.box {
+    width: 450px;
+    height: 450px;
+    position: absolute;
+    right: 35%;
+    border: 10px solid transparent;
+    transition: 
+    top 1s ease-in-out, opacity 1s ease-in-out, border-color 1s ease-in-out, background-color 1s ease-in-out;
+}
+
+
