@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calc-box">
+        <input type="text" class="screen" id="screen" disabled>
+        <div class="keypad">
+            <button onclick="clearScreen()">C</button>
+            <button onclick="removeLast()">&larr;</button>
+            <button class="math-key" onclick="pressKey('/')">÷</button>
+            <button class="math-key" onclick="pressKey('*')">×</button>
+            <button onclick="pressKey('7')">7</button>
+            <button onclick="pressKey('8')">8</button>
+            <button onclick="pressKey('9')">9</button>
+            <button class="math-key" onclick="pressKey('-')">−</button>
+            <button onclick="pressKey('4')">4</button>
+            <button onclick="pressKey('5')">5</button>
+            <button onclick="pressKey('6')">6</button>
+            <button class="math-key" onclick="pressKey('+')">+</button>
+            <button onclick="pressKey('1')">1</button>
+            <button onclick="pressKey('2')">2</button>
+            <button onclick="pressKey('3')">3</button>
+            <button class="result-key" onclick="calculate()">=</button>
+            <button class="zero-key" onclick="pressKey('0')">0</button>
+            <button onclick="pressKey('.')">.</button>
+        </div>
+    </div>
+
+    <script>
+        const screen = document.querySelector(".screen");
+
+        function pressKey(value) { screen.value += value; }
+        function clearScreen() { screen.value = ''; }
+        function removeLast() { screen.value = screen.value.slice(0, -1); }
+        function calculate() {
+            try {
+                screen.value = new Function('return ' + screen.value)() || '';
+            } catch {
+                screen.value = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>
+
