@@ -1,4 +1,3 @@
-// Dish Data
 const dishes = {
     sushi: {
         title: "Sushi",
@@ -27,7 +26,7 @@ const dishes = {
     }
 };
 
-// Open Pop-up
+
 function openPopup(dishKey) {
     const popup = document.querySelector(".popup-overlay");
     const popupTitle = document.getElementById("popup-title");
@@ -40,22 +39,22 @@ function openPopup(dishKey) {
         popupDescription.innerText = dishes[dishKey].description;
     }
 
-    popup.classList.add("active"); // Show pop-up
-    document.body.classList.add("no-scroll"); // Disable scrolling
+    popup.classList.add("active"); 
+    document.body.classList.add("no-scroll"); 
 }
 
-// Close Pop-up with animation
+
 function closePopup() {
     const popup = document.querySelector(".popup-overlay");
-    popup.classList.add("closing"); // Add closing animation
+    popup.classList.add("closing"); 
 
     setTimeout(() => {
-        popup.classList.remove("active", "closing"); // Fully hide after animation
-        document.body.classList.remove("no-scroll"); // Re-enable scrolling
-    }, 400); // Match CSS transition time
+        popup.classList.remove("active", "closing"); 
+        document.body.classList.remove("no-scroll"); 
+    }, 400); 
 }
 
-// Add event listeners to dish cards
+
 document.querySelectorAll(".dish-card").forEach(card => {
     card.addEventListener("click", function() {
         const dishKey = this.getAttribute("data-dish");
@@ -63,5 +62,5 @@ document.querySelectorAll(".dish-card").forEach(card => {
     });
 });
 
-// Close button functionality
+
 document.querySelector(".close-btn").addEventListener("click", closePopup);
