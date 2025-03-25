@@ -1,0 +1,131 @@
+body {
+    font-family: 'Noto Serif JP', serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://cdn.pixabay.com/photo/2020/08/22/23/24/restaurant-5509577_1280.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #fff;
+}
+
+
+.navbar {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px 20px;
+    text-align: left;
+}
+
+/* Banner */
+header {
+    padding: 60px 20px; 
+    background: rgba(0, 0, 0, 0.85);
+    color: #bfc07f; 
+    font-size: 24px;
+    height: 20vh;
+}
+
+header h1 {
+    color: #fffffb; 
+   
+}
+/* Dish Cards */
+.dishes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+}
+
+.dish-card {
+    background: rgba(0, 0, 0, 0.85);
+    color: #ffffff;
+    border: 3px solid #bfc07f;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    max-width: 260px;
+    height: 40vh;
+}
+
+.dish-card:hover {
+    transform: scale(1.05);
+}
+
+.dish-card img {
+    width: 100%;
+    height: 50%;
+    border-radius: 8px;
+}
+
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none; 
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+
+.popup-overlay.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto; 
+}
+
+
+.popup-content {
+    background: #1a1a1a;
+    color: white;
+    border: 3px solid #bfc07f; 
+    padding: 50px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 80%;
+    max-height: 80%;
+    overflow: auto;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+#popup-image {
+    width: 40%;  
+    max-width: 400px; 
+    height: auto; 
+    border-radius: 8px; 
+    margin: 20px auto; 
+}
+
+
+.popup-overlay.closing {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 35px;
+    cursor: pointer;
+    color: #bfc07f; 
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
